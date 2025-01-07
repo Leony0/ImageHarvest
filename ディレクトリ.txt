@@ -34,5 +34,4 @@ ImageHarvest
 ├─login_DB.db　-------------ユーザー情報を保存するデータベース
 ├─requirements.txt ----------pip install 一覧
 ├─ディレクトリ.txt 
-├─ハッカソンスライド.pptx
 └─__pycache__
