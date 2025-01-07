@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<form action='/upload_extract' enctype="multipart/form-data">
+    <h1>画像抽出</h1>
+    <p>ここにPDFをアップロードしてください</p>
+    <label for="file">
+           <input type="file" name="file" accept="application/pdf">
+    </label>
+    <button class="app1_button" type="submit" formmethod="POST">Extract</button>
+    {% if error_message1 %}
+    <p style="color: red;">{{ error_message1 }}</p>
+    {% endif %}
+    {% if word_message %}
+    <p style="color: #ca6309;">{{ word_message }}</p>
+    <a href="{{docx_path}}" download="{{docx_name}}">Download："{{docx_name}}"</a>
+    {% endif %}
+
+    <label for="img">
+        {% for item in imglist %}
+            <p><img src="{{ img_dir }}/{{ item }}" alt="Dummy"></p>
+        {% endfor %}
+    </label>
+   
+</form>
+
+<form method="post" action='/delete_pdf'>
+    <h1>PDF削除</h1>
+    <p>アップロードしたPDFを削除します
+    </p>
+    <label for="mySelect_pdf">
+        <select name="mySelect_pdf" id="mySelect_pdf">
+            <option value="" selected hidden>選択してください</option>
+            {% for item in filelist_pdf %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button class="app1_button" type="submit">Delete</button>
+    {% if error_message2 %}
+        <p style="color: red;">{{ error_message2 }}</p>
+    {% endif %}
+    </a>
+</form>
+
+<form method="post" action='/delete_data'>
+    <h1>画像削除</h1>
+    <p>抽出した画像を削除します<br></p>
+        
+    <label for="mySelect_img">
+        <select name="mySelect_img" id="mySelect_img">
+            <option value="" selected hidden>選択してください</option>
+            {% for item in filelist_img %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button class="app1_button"type="submit">Delete</button>
+    {% if error_message3 %}
+        <p style="color: red;">{{ error_message3 }}</p>
+    {% endif %}
+    </a>
+</form>
+
+
+
+
+{% endblock %}
