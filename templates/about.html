@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<main>
+    <div class="container">
+		<section id="hero">
+            <div class="hero_inner">
+               <p>画像から知識を収穫する</p> 
+               <p>Image Harvest</p> 
+            </div>
+        </section>
+    </div>
+    
+    <section id="inst">
+        
+        <h3 class="title">このアプリケーションについて</h3>
+        <p class="text">
+            Image Haevestは論文を対象とした画像抽出webアプリケーションです．<br>
+            全部で3つのアプリケーションが存在しています．<br>
+            用途に合わせた機能を使用することができます．
+
+        </p>
+    </section>
+    
+    <div class="container">
+        <section id="app1">
+            <section id="hero_app" class="hero1">
+                <div class="hero_app_inner">
+                    <p class="title">1. PDFから画像を抽出する</p>
+                </div>
+            </section>
+        </section>
+    </div>        
+            <p class="text">
+                1つ目はPDFから画像を抽出するアプリケーションです．<br>
+                wordやLaTeX等のコンピュータ上で作成されたPDFであれば<br>
+                記述されている画像をすべて抽出することができます．<br>
+                
+
+            </p>
+    
+        
+    
+    
+        
+    <div class="container">
+        <section id="app2">
+            <section id="hero_app" class="hero2">
+                <div class="hero_app_inner">
+                    <p class="title">2. 画像をトリミングする</p>
+                </div>
+            </section>
+        </section>
+ 
+    </div>
+    
+        
+            
+            <p class="text">
+                2つ目は画像をトリミングするアプリケーションです．<br>
+                論文をスキャナー等で画像としてスキャンされたものを対象に，任意の場所を選択してトリミングすることができます．<br>
+                選択箇所が画像部分に限らず，テキスト部分やグラフ部分であってもトリミングが可能です．<br>
+
+                
+
+            </p>
+        
+    <div class="container">
+        <section id="app3">
+            <section id="hero_app" class="hero3">
+                <div class="hero_app_inner">
+                    <p class="title">3. スキャンした論文から画像を抽出する</p>
+                </div>
+            </section>
+        </section>
+        
+    </div>
+            <p class="text">
+                3つ目はスキャンした論文から画像を抽出するアプリケーションです．<br>
+                あらかじめ抽出したい論文箇所を赤のマーカーで囲んでおきます．<br>
+                マーキングされた論文をスキャナー等で画像としてスキャンされたものを対象に<br>
+                マーカー部分を画像として自動抽出します．<br>
+                
+    
+            </p>
+        
+    
+       
+     
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+<form class="form1" action='/app1'>
+    <h1>PDFから画像抽出</h1>
+    <p>Extracting Images from PDFs</p>
+    <button class="button1" type="submit">Open</button>
+    </a>
+</form>
+
+<form class="form2" action='/app2'>
+    <h1>画像トリミング</h1>
+    <p>Image Trimming</p>
+    <button class="button2" type="submit">Open</button>
+    </a>
+</form>
+
+<form class="form3" action='/app3'>
+    <h1>スキャンされた論文から画像抽出</h1>
+    <p>Extracting Images from Scanned Papers</p>
+    <button class="button3" type="submit">Open</button>
+    </a>
+</form>
+</div>
+{% endblock %}

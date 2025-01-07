@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Image Harvest</title>
+<!--変更---------------->
+<link rel="stylesheet" href="./static/css/style.css" />
+<!--------------------->
+<link rel="icon" href="./static/favicon.ico">
+</head>
+<body>
+    <div id="header_new" >
+        <div class="logo">
+            
+                Image <span>Harvest</span>
+            </a>
+        </div>
+        
+        
+      </div>
+	<div class="container_new">
+            <form action='/new'>
+                <h1>新規登録</h1>
+                <p style="color: red;">数字のみのパスワードはログインできません</p>
+                <label>
+                    ニックネーム    
+                    <input type="text" name="name" autocomplete="off" value=""required>
+                </label>
+                <label >
+                    パスワード
+                    
+                    <input type="password" name="password"pattern="^([a-zA-Z0-9]{3,})$" title="半角英数字3文字以上で入力ください" value=""required>       
+                </label>
+                <button type="submit" formmethod="POST">Sign Up</button>
+                {% if message %}
+                <p style="color: rgb(255, 0, 0);">{{ message }}</p>
+                {% endif %}
+                <br></br>
+
+                <a href="/">ログインはこちら
+                </a>
+            </form>
+           
+        
+    </div>
+		
+    
+    
+
+		<div id="footer">
+			<p>Created by K.Maie and R.Yoshida</p>
+		</div>
+	
+	
+</body>
+</html>

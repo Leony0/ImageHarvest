@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <form action='/app2' method="POST" enctype="multipart/form-data">
+        <h1>画像トリミング</h1>
+        <p>ここに画像をアップロードしてください</p>
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Open">
+        {% if error_message1 %}
+        <p style="color: red;">{{ error_message1 }}</p>
+        {% endif %}
+        
+    </form>
+    
+
+    {% if filename %}
+        <div class="container">
+            <div class="trim">
+                <p>トリミングしたい箇所を赤枠で囲ってください</p>
+            </div>
+        </div>
+        
+
+        <div class="crop-area">
+            <img id="uploaded-img" src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image">
+            <div id="crop-rect" class="crop-rect"></div>
+        </div>
+        <div class="container">
+            <button class="app2_button"id="crop-button">Trimming</button>
+        </div>
+        <br>
+        <div class="container">
+            <div id="cropped-image-container">
+                <!-- ここに新しい画像が表示されます -->
+            </div>
+        </div>
+        
+        
+    {% endif %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.getElementById('uploaded-img');
+            const cropRect = document.getElementById('crop-rect');
+            let startX, startY, endX, endY, isDragging = false;
+
+            
+
+            img.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                
+                startX = e.offsetX;
+                startY = e.offsetY;
+                console.log(startX);
+                console.log(startY);
+                isDragging = true;
+                cropRect.style.left = `${startX}px`;
+                cropRect.style.top = `${startY}px`;
+                cropRect.style.width = '0px';
+                cropRect.style.height = '0px';
+            });
+
+            img.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    endX = e.offsetX;
+                    endY = e.offsetY;
+                    
+                    cropRect.style.width = `${Math.abs(endX - startX)}px`;
+                    cropRect.style.height = `${Math.abs(endY - startY)}px`;
+                    cropRect.style.left = `${Math.min(startX, endX)}px`;
+                    cropRect.style.top = `${Math.min(startY, endY)}px`;
+                }
+            });
+
+            img.addEventListener('mouseup', (e) => {
+                isDragging = false;
+                endX = e.offsetX;
+                endY = e.offsetY;
+                console.log(endX);
+                console.log(endY);
+            });
+
+            document.getElementById('crop-button').addEventListener('click', () => {
+                const filename = '{{ filename }}';
+                fetch('/cut_image', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename, x1: startX, y1: startY, x2: endX, y2: endY })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('画像が切り抜かれました: ' + data.new_filename);
+                    fil=filename.split('.')[0]
+                    const newImg = document.createElement('img');
+                    newImg.src = '/static/image/app2_image/'+fil+'/' + data.new_filename;
+                    newImg.alt = 'Cropped Image';
+                    newImg.classList.add('cropped-image');
+                    const container = document.getElementById('cropped-image-container');
+                    container.appendChild(newImg);
+
+                });
+            });
+        });
+    </script>
+
+<form method="post" action='/download2'>
+    <h1>wordダウンロード</h1>
+    <label for="mySelect_word">
+        <select name="mySelect_word" id="mySelect_word">
+            <option value="" selected hidden>選択してください</option>
+            {% for item in filelist_img %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button  class="app2_button"type="submit">Download</button>
+    {% if word_message %}
+    <p style="color:  #3930e0;">{{ word_message }}</p>
+    <a href="{{docx_path}}" download="{{docx_name}}">Download："{{docx_name}}"</a>
+    {% endif %}
+    </a>
+</form>
+
+
+<form method="post" action='/delete_pdf2'>
+    <h1>アップロード画像削除</h1>
+    <label for="mySelect_pdf">
+        <select name="mySelect_pdf" id="mySelect_pdf">
+            <option value="" selected hidden>選択してください</option>
+            {% for item in filelist_pdf %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button class="app2_button" type="submit">Delete</button>
+    {% if error_message2 %}
+        <p style="color: red;">{{ error_message2 }}</p>
+    {% endif %}
+    </a>
+</form>
+
+<form method="post" action='/delete_data2'>
+    <h1>画像データ削除</h1>
+    <label for="mySelect_img">
+        <select name="mySelect_img" id="mySelect_img">
+            <option value="" selected hidden>選択してください</option>
+            {% for item in filelist_img %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button class="app2_button" type="submit">Delete</button>
+    {% if error_message3 %}
+        <p style="color: red;">{{ error_message3 }}</p>
+    {% endif %}
+    </a>
+</form>
+
+
+
+{% endblock %}

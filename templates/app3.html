@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<form action='/upload3' enctype="multipart/form-data">
+    <h1>画像抽出</h1>
+    <p>ここにスキャンした論文をアップロードしてください</p>
+    <label for="file">
+           <input type="file" name="file" accept="image/*">
+    </label>
+    <button class="app3_button"type="submit" formmethod="POST">Extract</button>
+    {% if error_message1 %}
+    <p style="color: red;">{{ error_message1 }}</p>
+    {% endif %}
+    {% if word_message %}
+    <p style="color:  #007d8e;">{{ word_message }}</p>
+    <a href="{{docx_path}}" download="{{docx_name}}">Download："{{docx_name}}"</a>
+    {% endif %}
+
+    <label for="img">
+        {% for item in imglist %}
+            <p><img src="{{ image_folder_path }}/{{ item }}" alt="Dummy"></p>
+        {% endfor %}
+    </label>
+
+</form>
+
+<form method="post" action='/delete_pdf3'>
+    <h1>論文画像削除</h1>
+    <p>アップロードした論文を削除します
+    </p>
+    <label for="mySelect_pdf">
+        <select name="mySelect_pdf" id="mySelect_pdf">
+            <option value="" selected hidden>選択してください</option>
+            {% for item in filelist_pdf %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button class="app3_button" type="submit">Delete</button>
+    {% if error_message2 %}
+        <p style="color: red;">{{ error_message2 }}</p>
+    {% endif %}
+    </a>
+</form>
+
+
+<form method="post" action='/delete_data3'>
+    <h1>画像削除</h1>
+    <p>抽出した画像を削除します<br></p>
+    <label for="mySelect_img">
+        <select name="mySelect_img" id="mySelect_img">
+            <option value="" selected hidden>選択してください</option>
+            {% for item in filelist_img %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button class="app3_button" type="submit">Delete</button>
+    {% if error_message3 %}
+        <p style="color: red;">{{ error_message3 }}</p>
+    {% endif %}
+    </a>
+</form>
+
+
+
+{% endblock %}

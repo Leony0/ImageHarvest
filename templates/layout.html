@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Image Harvest</title>
+<!--変更---------------->
+<link rel="stylesheet" href="./static/css/style.css" />
+<!--------------------->
+<link rel="icon" href="./static/favicon.ico">
+</head>
+<body>
+	<div id="backcolor">
+		<div id="header" >
+			<div class="logo">
+				<a href="/index">
+					<span>Image</span> Harvest
+				</a>
+			</div>
+			
+			<nav>
+				<ul class="header_menu">
+					<li>
+						<a href="/about" class="about">about</a>
+					</li>
+					<li>
+						<a href="/index" class="home">home</a>
+					</li>
+					<li>
+						<a href="/" class="logout">logout</a>
+					</li>
+				</ul>
+			
+			</nav>
+		  </div>
+		  
+			{% block content %}
+			<!-- ここに個別のhtmlが入る -->
+			{% endblock %}
+		  
+	
+		<div id="footer">
+			<p>Created by K.Maie and R.Yoshida</p>
+		  </div>
+	</div>
+	
+</body>
+</html>

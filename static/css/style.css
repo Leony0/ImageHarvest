@@ -1,0 +1,335 @@
+html{
+    font-family: 'Helvetica Neue','Helvetica','Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', sans-serif;
+}
+body{
+    background-color: #e6e6e6;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(to bottom,#f7f3f3,#abaaaa);
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    
+   
+    vertical-align: middle;
+    height: 100px;
+    margin-bottom: 2%;
+  
+}
+
+#header_new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(to bottom,#f7f3f3,#abaaaa);
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    
+   
+    vertical-align: middle;
+    height: 100px;
+    margin-bottom: 2%;
+  
+}
+
+#header_new span{
+    color: #619c57;
+}
+
+.header_menu{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    margin-left: 40px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo span{
+    color: #2b2b2b;
+}
+
+.about{
+    margin-right: 40px;
+}
+
+.home{
+    margin-right: 40px;
+}
+
+.logout{
+    margin-right: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    
+    text-align: center; /* 子要素を中央揃えにする */
+  }
+
+/* フォーム全体のスタイル */
+form {
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to bottom,#ececec,#bcb9b9);
+    border-radius: 0px;
+    
+}
+
+.form1 {
+    color: #ca6309;
+    margin-left: 50px;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+}
+
+.form2 {
+    color: #3930e0;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+}
+
+.form3 {
+    color: #007d8e;
+    margin-right: 50px;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.button1 {
+    background: linear-gradient(to bottom,#f5b34f,#ea7917);
+    width: 200px; /* ボタンの幅 */
+    height: 200px; /* ボタンの高さ */
+    border: none; /* ボーダーをなくす */
+    border-radius: 50%; /* 丸い形状にするための円形の半径 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    margin: 10px; /* ボタンの間の余白 */
+}
+
+.button2 {
+    background: linear-gradient(to bottom,#93acec,#443af4);
+    width: 200px; /* ボタンの幅 */
+    height: 200px; /* ボタンの高さ */
+    border: none; /* ボーダーをなくす */
+    border-radius: 50%; /* 丸い形状にするための円形の半径 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    margin: 10px; /* ボタンの間の余白 */
+}
+
+.button3 {
+    background: linear-gradient(to bottom,#8becf1,#007d8e);
+    width: 200px; /* ボタンの幅 */
+    height: 200px; /* ボタンの高さ */
+    border: none; /* ボーダーをなくす */
+    border-radius: 50%; /* 丸い形状にするための円形の半径 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    margin: 10px; /* ボタンの間の余白 */
+}
+
+/* ラベルのスタイル */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* ボタンのスタイル */
+button {
+    width: 40%;
+    padding: 10px;
+    background: linear-gradient(to bottom,#22a454,#58ea44);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.app1_button{
+    background: linear-gradient(to bottom,#f5b34f,#ea7917);
+}
+
+.app2_button{
+    background: linear-gradient(to bottom,#93acec,#554cfe);
+}
+
+.app3_button{
+    background: linear-gradient(to bottom,#8becf1,#007d8e);
+}
+
+/* ボタンのホバー時のスタイル */
+button:hover {
+    background-color: #b30077;
+}
+
+/* リンクのスタイル */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #619c57;
+    text-decoration: none;
+}
+
+/* リンクのホバー時のスタイル */
+a:hover {
+    text-decoration: underline;
+}
+
+/* タイトルのスタイル */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+/* 最後のデータ行のスタイル */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+#footer {
+    margin-top: 2em;
+    
+    color: rgb(0, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*app2 について*/
+
+img {
+    width: 100%; /* 画像の幅を100%にして、親要素（.crop-area）の幅に合わせる */
+   
+}
+.crop-area {
+    width: 1000px; /* 親要素の幅に収まるように設定 */
+    text-align: center;
+    margin: 0 auto; /* 画像を中央に配置 */
+    position: relative;
+
+}
+/*表示をセンターにすると赤枠がずれる（現在ずれている）*/
+.crop-rect {
+    border: 5px solid rgb(255, 0, 0);
+    position: absolute;
+    pointer-events: none;
+}
+
+
+#crop-button{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cropped-image {
+    width: 300px; /* ここで画像の幅を指定 */
+    height: 300px; /* ここで画像の高さを指定 */
+    object-fit: contain; /* 画像をコンテナにフィットさせる */
+    margin: 10px; /* 画像間のマージンを設定 */
+    border: 1px solid #ccc; /* 境界線を追加 */
+    display: inline-block; /* 画像を横に並べる */
+}
+
+.trim{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+
+
+/*aboutについて*/
+#hero{
+    width: 540px; /* 丸の直径 */
+    height: 540px; /* 丸の直径 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom,#89ea86,#285b12);
+    border-radius: 50%; /* 丸を作るための円形 */
+    margin-bottom: 60px;
+}
+
+.hero_inner p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text{
+    font-size: 20px;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 60px;
+}
+
+#hero_app{
+    width: 540px; /* 丸の直径 */
+    height: 540px; /* 丸の直径 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 50%; /* 丸を作るための円形 */
+    margin-bottom: 60px;
+}
+
+.hero_app_inner p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.hero1{
+    background: linear-gradient(to bottom,#f5b34f,#ea7917);
+}
+
+.hero2{
+    background: linear-gradient(to bottom,#7093ed,#453cf7);
+}
+
+.hero3{
+    background: linear-gradient(to bottom,#8becf1,#007d8e);
+}
+
+/*ログイン画面等*/
+/* 入力フィールドのスタイル */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.container_new{
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}

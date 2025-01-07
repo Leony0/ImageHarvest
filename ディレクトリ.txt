@@ -1,0 +1,38 @@
+ImageHarvest
+│
+├─ImageHarvest_demo ---------------デモに使用する入力データ
+│  
+├─files　　 ---------------入力データの保存場所
+│  ├─app1_files　
+│  ├─app2_files
+│  └─app3_files
+├─static　　---------------画像関係の保存場所
+│  ├─favicon.ico
+│  ├─css 	---------------レイアウト関係
+│  │　└─style.css  
+│  │　
+│  └─image　---------------抽出画像の保存場所
+│      ├─app1_image
+│      ├─app2_image
+│      └─app3_image
+│          
+├─templates  ---------------htmlの保存場所
+│	 ├─about.html　
+│	 ├─app1.html　
+│	 ├─app2_html　
+│	 ├─app3_html
+│	 ├─index.html　
+│	 ├─layout.html　
+│	 ├─login.html
+│	 └─new.html
+├─word_files ---------------出力されるwordファイルの保存場所
+│  ├─app1_word
+│  ├─app2_word
+│  └─app3_word
+│
+├─app.py 　　---------------実行ファイル
+├─login_DB.db　-------------ユーザー情報を保存するデータベース
+├─requirements.txt ----------pip install 一覧
+├─ディレクトリ.txt 
+├─ハッカソンスライド.pptx
+└─__pycache__
