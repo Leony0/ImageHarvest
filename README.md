@@ -1,4 +1,5 @@
 # ImageHarvest
+<img alt="Image" src="https://github.com/user-attachments/assets/ca44005d-9e66-4835-b764-599d02094401" />
 
 論文を対象とした画像抽出webアプリケーションです．
 
